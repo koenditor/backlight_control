@@ -7,7 +7,7 @@
  * @author: Hendrik Werner
  */
 
-#define MIN_BRIGHTNESS 1
+#define MIN_BRIGHTNESS 0
 
 #define MAX(a, b) ((a > b) ? a : b)
 #define MIN(a, b) ((a < b) ? a : b)
@@ -53,6 +53,7 @@ int main(int argc, char **argv) {
 	brightness_value = MIN(brightness_value, MAX_BRIGHTNESS);
 	brightness_value = MAX(brightness_value, MIN_BRIGHTNESS);
 	fprintf(brightness, "%d", brightness_value);
+	fprintf(stdout, "%d\n", brightness_value*100/MAX_BRIGHTNESS);
 	fclose(brightness);
 	return EXIT_SUCCESS;
 }
